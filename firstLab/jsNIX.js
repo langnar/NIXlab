@@ -14,9 +14,9 @@ for(var i = 1; i <= 100; i++){
 	}
 
 }
-/*===========================Ex1===========================*/
+/*===========================Task1===========================*/
 var a = "abcd";
-function rev(arr){
+function reverse(arr){
 	var arr = string.split('');
 	var newarr = [];
 	for(var i = arr.length - 1, j = 0; i >= 0, j < arr.length; i--, j++){
@@ -25,29 +25,29 @@ function rev(arr){
 	return newarr.join('');
 }
 
-console.log(rev(a));
+console.log(reverse(a));
 
-function upper(string){
+function ucFirst(string){
 	var arr = string.split('');
 	var newlet = arr[0];
 	arr[0] = newlet.toUpperCase();
 	return arr.join('');;
 }
 
-// console.log(upper(a));
+console.log(ucFirst(a));
 
-function upperWord(str){
+function ucWords(str){
 	var word = str.split(' ');
 	var arr = [];
 	for(var i = 0; i < word.length; i++){
-		arr.push(upper(word[i]));
+		arr.push(ucFirst(word[i]));
 	}
-
 	return arr.join(' ');
 }
-console.log(upperWord('abc sdf ghj'));
+console.log(ucWords('abc sdf ghj'));
 
-/*===========================Ex3===========================*/
+/*===========================Task3===========================*/
+
 function findArray(arr1, arr2){
 	var newarr = [];
 	for(var i = 0; i < arr2.length; i++){
@@ -55,5 +55,32 @@ function findArray(arr1, arr2){
 	}
 	return newarr;
 }
-
 console.log(findArray([1, 2, 3, 4, 5], [0, 2, 3]));
+
+
+function avgLength(arr){
+	var newarr = [];
+	var sum = 0, avg;
+	for(var i = 0; i < arr.length; i++){
+		sum += arr[i].length;
+	}
+	
+	avg = Math.round(sum/arr.length);
+
+	for(var i = 0; i < arr.length; i++){
+		if(arr[i].length >= avg){
+		newarr.push(arr[i].slice(0, avg));
+		}else{
+			var char = arr[i].charAt(0);
+			for(var j = 0; j < (avg - arr[i].length); j++){
+				arr[i] += char;
+			}
+			newarr.push(arr[i]);
+		}
+	}
+	return newarr;
+}
+
+console.log(avgLength(['qq', 'a','v']))
+
+
