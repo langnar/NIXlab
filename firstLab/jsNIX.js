@@ -46,6 +46,19 @@ function ucWords(str){
 }
 console.log(ucWords('abc sdf ghj'));
 
+function isEmail(str){
+	return /\w{3,}@\w{3,}\.\w{2,}/.test(str);
+}
+
+function isUrl(str){
+	return /\w{1,}\.\w{2,}/.test(str)
+}
+
+function isDate(str){
+	return /(\d{2})(\-|\.|\/)(\d{2})(\-|\.|\/)(\d{4})/.test(str);
+}
+
+
 /*===========================Task3===========================*/
 
 function findArray(arr1, arr2){
