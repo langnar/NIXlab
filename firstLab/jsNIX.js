@@ -58,6 +58,9 @@ function isDate(str){
 	return /(\d{2})(\-|\.|\/)(\d{2})(\-|\.|\/)(\d{4})/.test(str);
 }
 
+function isPhoneNumber(str){
+	return /\+[380]{3}[0-9]{9}/.test(str);
+}
 
 /*===========================Task3===========================*/
 
