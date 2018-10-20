@@ -12,7 +12,6 @@ for(var i = 1; i <= 100; i++){
 	else{
 		console.log(i);
 	}
-
 }
 /*===========================Task1===========================*/
 var a = "abcd";
@@ -46,6 +45,18 @@ function ucWords(str){
 }
 console.log(ucWords('abc sdf ghj'));
 
+function ucWords2(str){
+	var word = str.split(' ');
+	var arr = [];
+	word.forEach((el)=>arr.push(ucFirst(el)));
+	return arr.join(' ');
+}
+
+function ucWords3(str){
+	var word = str.split(' ');
+	return word.map((el)=>{return ucFirst(el)}).join(' ');
+}
+
 function isEmail(str){
 	return /\w{3,}@\w{3,}\.\w{2,}/.test(str);
 }
@@ -71,6 +82,7 @@ function findArray(arr1, arr2){
 	}
 	return newarr;
 }
+
 console.log(findArray([1, 2, 3, 4, 5], [0, 2, 3]));
 
 
