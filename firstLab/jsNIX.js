@@ -109,57 +109,7 @@ function avgLength(arr){
 	return newarr;
 }
 
-/*===========================Task4===========================*/
 
-function filterArrays(ar1, ar2){
-	var newarr = [];
-	var a1 = ar1.filter((el) => {return parseFloat(el.balance.replace(/[,$]/,"")) 
-										&& (el.age < 30) 
-										&& (el.eyeColor == "blue" || el.eyeColor == "brown")
-										&& (el.tags.includes("velit")|| el.tags.includes("anim"))
-								});
-	
-	var a2 = ar2.filter((el)=> {return parseFloat(el.balance.replace(/[,$]/,"")) 
-										&& (el.age < 30) 
-										&& (el.eyeColor == "blue" || el.eyeColor == "brown")
-										 && (el.tags.includes("velit")|| el.tags.includes("anim"))
-								});
-	
-	newarr = a1.concat(a2);
-	return newarr;
-	}
-	
-	function findUniqueTags(arr1, arr2){
-		var result = [];
-		var tag = [];
-		var counter = 0;
-	
-		var unique = function (arr){
-			arr.tags.forEach((el) => {
-				if(!tag.includes(el)){
-					tag.push(el);
-					result.push({id: counter, name: el});
-					counter++;
-				}
-			});
-		}
-	
-		arr1.forEach((el) => (unique(el)));
-		arr2.forEach((el) => (unique(el)));
-		
-		return result;
-	}
-	console.log(findUniqueTags(arr1, arr2));
-
-	function copy(){
-		var resArr = [];
-		for(var i = 0; i < arguments.length; i++){
-			resArr.push(Object.assign({}, arguments[i]))
-		}
-		return resArr;
-	}
-	var newArr = copy(arr1, arr2);
-	console.log(newArr);
 
 
 
