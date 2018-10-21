@@ -129,5 +129,15 @@ function filterArrays(ar1, ar2){
 	return newarr;
 	}
 
+	function copy(){
+		var resArr = [];
+		for(var i = 0; i < arguments.length; i++){
+			resArr.push(Object.assign({}, arguments[i]))
+		}
+		return resArr;
+	}
+	var newArr = copy(arr1, arr2);
+	console.log(newArr);
+
 
 
