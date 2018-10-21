@@ -109,6 +109,25 @@ function avgLength(arr){
 	return newarr;
 }
 
-console.log(avgLength(['qq', 'a','v']))
+/*===========================Task4===========================*/
+
+function filterArrays(ar1, ar2){
+	var newarr = [];
+	var a1 = ar1.filter((el) => {return parseFloat(el.balance.replace(/[,$]/,"")) 
+										&& (el.age < 30) 
+										&& (el.eyeColor == "blue" || el.eyeColor == "brown")
+										&& (el.tags.includes("velit")|| el.tags.includes("anim"))
+								});
+	
+	var a2 = ar2.filter((el)=> {return parseFloat(el.balance.replace(/[,$]/,"")) 
+										&& (el.age < 30) 
+										&& (el.eyeColor == "blue" || el.eyeColor == "brown")
+										 && (el.tags.includes("velit")|| el.tags.includes("anim"))
+								});
+	
+	newarr = a1.concat(a2);
+	return newarr;
+	}
+
 
 
