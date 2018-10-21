@@ -128,6 +128,28 @@ function filterArrays(ar1, ar2){
 	newarr = a1.concat(a2);
 	return newarr;
 	}
+	
+	function findUniqueTags(arr1, arr2){
+		var result = [];
+		var tag = [];
+		var counter = 0;
+	
+		var unique = function (arr){
+			arr.tags.forEach((el) => {
+				if(!tag.includes(el)){
+					tag.push(el);
+					result.push({id: counter, name: el});
+					counter++;
+				}
+			});
+		}
+	
+		arr1.forEach((el) => (unique(el)));
+		arr2.forEach((el) => (unique(el)));
+		
+		return result;
+	}
+	console.log(findUniqueTags(arr1, arr2));
 
 	function copy(){
 		var resArr = [];
